@@ -19,5 +19,12 @@ touch Dockerfile docker-compose.yml nginx.conf README.md
 
 mv ~/SRR8786200_1.fastq.gz input/
 
-**Do pliku Dockerfile wstawiłam kod z pliku**
+**Do pliku Dockerfile, nginx.conf i docker-compose wstawiłam kod z pliku**
 
+**Uruchomiłam projekt komendą:**
+
+sudo docker compose up --bild  
+
+**W przeglądarce użyłam linku z pliku http://localhost:8080**
+
+Wyskoczyła strona FASTQS
