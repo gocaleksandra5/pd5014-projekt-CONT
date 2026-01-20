@@ -32,8 +32,9 @@ Wyskoczyła strona FASTQS
 
 ____________________________________________________________________________________________________________
 
-**Plik Dockerfile:
-ten kod buduje obraz oparty na Ubuntu 22.04, instaluje środowisko Java oraz narzędzie FastQC, konfiguruje zmienne środowiskowe i definiuje FastQC jako domyślne polecenie uruchamiane w kontenerze
+** Plik Dockerfile:
+
+Ten kod buduje obraz oparty na Ubuntu 22.04, instaluje środowisko Java oraz narzędzie FastQC, konfiguruje zmienne środowiskowe i definiuje FastQC jako domyślne polecenie uruchamiane w kontenerze
 
 FROM ubuntu:22.04
 
@@ -52,6 +53,7 @@ ENV CLASSPATH=/usr/local/FastQC:/usr/local/FastQC/htsjdk.jar:/usr/local/FastQC/j
 
 ENTRYPOINT ["fastqc"] (Każde uruchomienie kontenera wywołuje polecenie fastqc)
 CMD ["--help"]
+
 
 
 
