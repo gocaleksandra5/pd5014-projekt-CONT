@@ -1,7 +1,7 @@
-## Konteneryzacja w bioinformatyce (CONT)
+# Konteneryzacja w bioinformatyce (CONT)
 
 
-# Temat projektu: Mikroserwis do analizy plików FASTQ za pomocą FastQC i wyświetlania wyników przez NGINX.
+## Temat projektu: Mikroserwis do analizy plików FASTQ za pomocą FastQC i wyświetlania wyników przez NGINX.
 
 **Utworzyłam katalog projektu pd5014-projekt-CONT**
 
@@ -29,5 +29,8 @@ sudo docker compose up --bild
 **W przeglądarce użyłam linku z pliku http://localhost:8080**
 
 Wyskoczyła strona FASTQS
+
+____________________________________________________________________________________________________________
+
 
 
