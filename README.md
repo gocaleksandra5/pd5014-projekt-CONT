@@ -40,8 +40,7 @@ Ten kod buduje obraz oparty na Ubuntu 22.04, instaluje środowisko Java oraz nar
 FROM ubuntu:22.04
 
 RUN apt-get update && apt-get install -y \ 
-
-                                             **(Sprawdzanie aktualizacji i automatyczna ich instalacja)**
+                                          **(Sprawdzanie aktualizacji i automatyczna ich instalacja)**
     
 openjdk-11-jre-headless unzip perl wget && \   (Uruchamia system Java, unzip - rozpakowanie plików zip, weget - pobiera treści z internetu )
     wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.12.1.zip && \  (Pobiera archiwum ZIP z oficjalnej strony projektu FastQC)
@@ -75,6 +74,7 @@ server {
 
 
 ___________________________________________________________________________________________________________
+
 
 
 
