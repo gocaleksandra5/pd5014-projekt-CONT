@@ -32,7 +32,8 @@ Wyskoczyła strona FASTQS
 
 ____________________________________________________________________________________________________________
 
-*Plik Dockerfile:
+
+**Plik Dockerfile:**
 
 Ten kod buduje obraz oparty na Ubuntu 22.04, instaluje środowisko Java oraz narzędzie FastQC, konfiguruje zmienne środowiskowe i definiuje FastQC jako domyślne polecenie uruchamiane w kontenerze
 
@@ -54,9 +55,20 @@ ENV CLASSPATH=/usr/local/FastQC:/usr/local/FastQC/htsjdk.jar:/usr/local/FastQC/j
 ENTRYPOINT ["fastqc"] (Każde uruchomienie kontenera wywołuje polecenie fastqc)
 CMD ["--help"]
 
+___________________________________________________________________________________________________________________
+
+**Plik nginx.conf:**
+Serwer NGINX działa w osobnym kontenerze i udostępnia statyczny raport FastQC zapisany w wolumenie Dockera, dzięki czemu wyniki analizy wykonanej w innym kontenerze są dostępne przez przeglądarkę.
+
+server {
+    listen 80; (Określa port, na którym serwer NGINX nasłuchuje połączeń HTTP. Port 80 to domyślny port protokołu HTTP)
+    server_name localhost;
+    root /usr/share/nginx/html;
+    index SRR8786200_1_fastqc.html; (Określa domyślny plik, który NGINX ma wyświetlić po wejściu na stronę. Jest to główny raport HTML wygenerowany przez FastQC.)
+    location / {
+        try_files $uri $uri/ =404;  (Sprawdza czy istnieje taki plik ($uri) i katalog ($uri/), jeśli nie to pokaże się błąd)
+    }
+}
 
 
-
-
-
-
+___________________________________________________________________________________________________________
