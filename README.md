@@ -77,9 +77,8 @@ ________________________________________________________________________________
 
 Docker Compose zarządza dwoma kontenerami: FastQC wykonuje analizę FASTQ i zapisuje wyniki w wolumenie, natomiast NGINX udostępnia raport HTML przez przeglądarkę, korzystając z tego samego wolumenu.
 
-version: '3.8'
-
-services:
+- version: '3.8'
+- services: 
   fastqc:
     build:
       context: .
@@ -111,6 +110,7 @@ volumes:
 
 networks:
   fastqc_network:
+
 
 
 
